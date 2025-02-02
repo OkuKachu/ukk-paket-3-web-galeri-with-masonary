@@ -1,0 +1,172 @@
+
+        :root {
+            --primary-color: #ffaf72;
+            --secondary-color: #767676;
+            --background-color: #fff;
+            --hover-color: #f0f0f0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif;
+        }
+
+        /* Floating Action Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Masonry Grid */
+        .masonry-grid {
+            columns: 5;
+            column-gap: 16px;
+            padding: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                columns: 4;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        /* Card Styling */
+        .pin-card {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .pin-card:hover {
+            transform: scale(1.02);
+        }
+
+        .pin-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .pin-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .pin-card:hover .pin-card-overlay {
+            opacity: 1;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+        }
+
+        .upload-form {
+            padding: 24px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            padding: 12px;
+            margin-bottom: 16px;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 24px;
+            padding: 12px 24px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffaf72;
+        }
+
+        /* Image Preview */
+        #imagePreview {
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .footer {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 20px 0; /* Padding for top and bottom */
+            position: relative; /* Position relative for layout */
+            bottom: 0; /* Align to the bottom */
+            width: 100%; /* Full width */
+            text-align: center; /* Center the text */
+            border-top: 1px solid #dee2e6; /* Optional: border on top */
+        }
+        
+        .footer small {
+            color: #6c757d; /* Text color */
+        }
+
+        @media (max-width: 768px) {
+            .pin-card-overlay {
+                flex-direction: column;
+                align-items: center;
+                padding: 16px;
+            }
+            .pin-card-overlay h5 {
+                font-size: 10px;
+            }
+            .pin-card-overlay p {
+                font-size: 8px;
+            }
+            .pin-card-overlay small {
+                font-size: 6px;
+            }
+        }
